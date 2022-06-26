@@ -26,9 +26,9 @@ const interval = setInterval(() => {
   times.value = value;
 }, 1000);
 
-const src = new URL("https://www.youtube-nocookie.com/embed/tzDAlNljnCU");
+const src = new URL("https://www.youtube-nocookie.com/embed/qHKMF2zGrAg");
 src.searchParams.append("controls", "0");
-src.searchParams.append("start", "8");
+// src.searchParams.append("start", "8");
 src.searchParams.append("autoplay", "1");
 src.searchParams.append("rel", "1");
 src.searchParams.append("showinfo", "0");
