@@ -36,7 +36,7 @@ video.value.searchParams.append("rel", "1");
 video.value.searchParams.append("showinfo", "0");
 
 const setIcon = (muted = false) =>
-  `url(${muted ? "'volume_off.svg'" : "'volume_on.svg'"})`;
+  `url(${muted ? "'./volume_off.svg'" : "'./volume_on.svg'"})`;
 const icon = ref(setIcon());
 function toggleSound() {
   const muted = video.value.searchParams.has("mute");
