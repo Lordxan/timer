@@ -26,22 +26,38 @@ const interval = setInterval(() => {
   times.value = value;
 }, 1000);
 
-const src = new URL("https://www.youtube-nocookie.com/embed/qHKMF2zGrAg");
-src.searchParams.append("controls", "0");
-// src.searchParams.append("start", "8");
-src.searchParams.append("autoplay", "1");
-src.searchParams.append("rel", "1");
-src.searchParams.append("showinfo", "0");
+const video = ref<URL>(
+  new URL("https://www.youtube-nocookie.com/embed/qHKMF2zGrAg")
+);
+video.value.searchParams.append("controls", "0");
+video.value.searchParams.append("autoplay", "1");
+video.value.searchParams.append("mute", "1");
+video.value.searchParams.append("rel", "1");
+video.value.searchParams.append("showinfo", "0");
+
+const setIcon = (muted = false) =>
+  `url(${muted ? "'volume_off.svg'" : "'volume_on.svg'"})`;
+const icon = ref(setIcon());
+function toggleSound() {
+  const muted = video.value.searchParams.has("mute");
+  icon.value = setIcon(muted);
+  if (muted) {
+    video.value.searchParams.delete("mute");
+  } else {
+    video.value.searchParams.append("mute", "1");
+  }
+}
 </script>
 
 <template>
   <iframe
     class="video"
-    :src="src.toString()"
+    :src="video.toString()"
     title="YouTube video player"
     frameborder="0"
     allow="autoplay;"
   />
+  <i class="toggle" @click="toggleSound" />
   <template v-for="(time, i) in times" :key="i">
     <div class="time">
       <clock
@@ -81,5 +97,20 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
+}
+$icon-size: 64px;
+.toggle {
+  position: absolute;
+  right: 100px;
+  top: 10px;
+  width: $icon-size;
+  height: $icon-size;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  background-image: v-bind(icon);
+  filter: invert(80%) sepia(22%) saturate(1374%) hue-rotate(337deg)
+    brightness(99%) contrast(82%);
 }
 </style>
