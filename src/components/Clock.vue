@@ -44,7 +44,7 @@ watch(digit, async (newVal, oldVal) => {
 /****************************************************************************\
  * FrontEndFunn: https://github.com/frontendfunn/flipclock-using-javascript *
 \****************************************************************************/
-$flip-height: 100px;
+$flip-height: 8vw;
 $flip-width: calc($flip-height * 0.6);
 $line-height: calc($flip-height * 0.5);
 $flip-container-color: #131313;
@@ -53,7 +53,7 @@ $flip-text-color: #f2aa3c;
 $flip-border-radius: calc($flip-height * 0.05);
 $animation-time: 1s;
 $animation-ease: linear;
-$perspective: 200px;
+$perspective: 16vw;
 @keyframes flipperTopAnimation {
   0% {
     transform: rotateX(0deg);
