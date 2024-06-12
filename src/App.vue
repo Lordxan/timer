@@ -3,7 +3,6 @@ import extend from "moment-duration-format";
 import moment, { Moment } from "moment";
 import { ref } from "vue";
 import Clock from "./components/Clock.vue";
-import config from "../vite.config";
 
 extend(moment as any);
 
@@ -37,7 +36,7 @@ video.value.searchParams.append("rel", "1");
 video.value.searchParams.append("showinfo", "0");
 
 const setIcon = (muted = false) =>
-  `url(${config.base}${muted ? "'volume_off.svg'" : "'volume_on.svg'"})`;
+  `url(${import.meta.env.BASE_URL}${muted ? "'volume_off.svg'" : "'volume_on.svg'"})`;
 const icon = ref(setIcon());
 function toggleSound() {
   const muted = video.value.searchParams.has("mute");
