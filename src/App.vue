@@ -6,7 +6,7 @@ import Clock from "./components/Clock.vue";
 
 extend(moment as any);
 
-const endgame = moment("2023-06-09");
+const endgame = moment("2024-11-10");
 
 const getDuration = (e: Moment) => () =>
   moment
