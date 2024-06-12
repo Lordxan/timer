@@ -27,7 +27,7 @@ const interval = setInterval(() => {
 }, 1000);
 
 const video = ref<URL>(
-  new URL("https://www.youtube-nocookie.com/embed/rNM3yGQIdrE")
+  new URL("https://www.youtube-nocookie.com/embed/aIcUSd3nkJE")
 );
 video.value.searchParams.append("controls", "0");
 video.value.searchParams.append("autoplay", "1");
