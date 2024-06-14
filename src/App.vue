@@ -6,7 +6,7 @@ import Clock from "./components/Clock.vue";
 
 extend(moment as any);
 
-const endgame = moment("2024-11-10");
+const endgame = moment("2024-11-6");
 
 const getDuration = (e: Moment) => () =>
   moment
@@ -27,7 +27,7 @@ const interval = setInterval(() => {
 }, 1000);
 
 const video = ref<URL>(
-  new URL("https://www.youtube-nocookie.com/embed/aIcUSd3nkJE?start=71")
+  new URL("https://www.youtube-nocookie.com/embed/n6-USQmdkyc")
 );
 video.value.searchParams.append("controls", "0");
 video.value.searchParams.append("autoplay", "1");
