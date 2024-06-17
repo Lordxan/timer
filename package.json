@@ -12,7 +12,7 @@
     "vue": "^3.2.25"
   },
   "devDependencies": {
-    "@types/moment-duration-format": "^2.2.3",
+    "@types/moment-duration-format": "^2.2.6",
     "@vitejs/plugin-vue": "^2.3.3",
     "eslint": "^8.18.0",
     "sass": "^1.53.0",
